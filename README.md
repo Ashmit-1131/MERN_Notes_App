@@ -26,6 +26,7 @@ MERN-Notes-App/
 │── frontend/      # React frontend with Tailwind CSS
 │   ├── src/
 │   │   ├── components/
+        |__
 │   │   ├── pages/
 │   │   ├── context/
 │   │   ├── utils/
