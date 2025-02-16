@@ -1,0 +1,48 @@
+/* Login.css */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/hero_image.png') no-repeat center center/cover;
+  }
+  
+  .card {
+    width: 24rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+  }
+  
+  h2 {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .form-label {
+    font-weight: 500;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 0.75rem;
+  }
+  
+  .btn-success {
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .text-center a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .text-center a:hover {
+    text-decoration: underline;
+  }
+  

@@ -11,10 +11,13 @@ MERN-Notes-App/
 │── backend/       # Node.js & Express backend
 │   ├── controllers/    # Business logic (Authentication & Notes)
 │   │   ├── authController.js
+│   │   ├── noteController.js
 │   ├── models/         # Database models (Schemas)
 │   │   ├── User.js
+│   │   ├── Note.js
 │   ├── routes/         # API endpoints
 │   │   ├── authRoutes.js
+│   │   ├── noteRoutes.js
 │   ├── middleware/     # JWT authentication middleware
 │   │   ├── authMiddleware.js
 │   ├── config/         # Configuration files (Database connection)
@@ -26,6 +29,7 @@ MERN-Notes-App/
 │── frontend/      # React frontend with Tailwind CSS
 │   ├── src/
 │   │   ├── components/
+        |__
 │   │   ├── pages/
 │   │   ├── context/
 │   │   ├── utils/
@@ -84,6 +88,37 @@ MERN-Notes-App/
    git add .
    git commit -m "Day 1: Backend authentication & frontend setup"
    git push origin day-1
+   ```
+
+---
+
+
+## Day 2: Notes CRUD API & Authentication Middleware (Branch: `day-2`)
+
+### ✅ Backend Tasks
+1. Define **Note model (`models/Note.js`)**
+2. Create **CRUD routes (`routes/noteRoutes.js`)**
+3. Implement **authentication middleware (`middleware/authMiddleware.js`)**
+4. Implement **Notes controller (`controllers/noteController.js`)**
+5. Secure all **protected routes** using authentication middleware
+6. Test APIs using **Postman**
+7. Push changes to GitHub
+   ```sh
+   git checkout -b day-2
+   git add .
+   git commit -m "Day 2: Implement Notes CRUD API & authentication middleware"
+   git push origin day-2
+   ```
+
+### ✅ Frontend Tasks
+1. Implement **authentication context (`context/AuthContext.js`)**
+2. Create **Login & Registration components**
+3. Set up **Protected Route component**
+4. Push changes to GitHub
+   ```sh
+   git add .
+   git commit -m "Day 2: Authentication logic & context setup"
+   git push origin day-2
    ```
 
 ---
