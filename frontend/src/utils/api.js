@@ -1,4 +1,4 @@
 export const config = {
-    endpoint: `http://localhost:8081`,
+    endpoint: `https://mern-notes-app-6ar0.onrender.com`,
   };
   
