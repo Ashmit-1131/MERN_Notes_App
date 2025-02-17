@@ -10,6 +10,8 @@ import './NoteBook.css';
 import { config } from '../../utils/api';
 import CategoryFilter from './CategoryFilter';
 
+
+
 const NoteBook = () => {
     const [notes, setNotes] = useState([]);
     const [showModal, setShowModal] = useState(false);

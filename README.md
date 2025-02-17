@@ -30,10 +30,7 @@ frontend/
 │── src/
 │   ├── assets/                # Static assets (images, fonts, etc.)
 │   │   ├── images/
-│   │   ├── fonts/
-│   │   ├── styles/
-│   │       ├── global.css     # Global styles
-│   │       ├── variables.css  # Theme variables
+
 │
 │   ├── components/            # Reusable UI components
 │   │   ├── Layout/            # Shared layout components
@@ -48,9 +45,9 @@ frontend/
 │   │   │   ├── NoteCard.js
 │   │   │   ├── NoteCard.css
 │   │   │
-│   │   ├── UI/                # Generic UI components (buttons, modals, etc.)
-│   │   │   ├── Button.js
-│   │   │   ├── Modal.js
+│   │   ├── Modals/                # Generic UI components (buttons, modals, etc.)
+│   │   │   ├── ViewModal.js
+            |__ViewModal.css
 │   │   │   ├── CreateNoteModal.js
 │   │   │   ├── CreateNoteModal.css
 │
@@ -58,23 +55,14 @@ frontend/
 │   │   ├── AuthContext.js
 │   │   ├── ThemeContext.js
 │
-│   ├── pages/                 # Page-level components (routes)
-│   │   ├── Home.js
+│   ├── pages/                 # Page-level components 
 │   │   ├── Login.js
 │   │   ├── Login.css
 │   │   ├── Register.js
 │   │   ├── Register.css
 │
-│   ├── routes/                # Centralized routing configuration
-│   │   ├── Routes.js
-│
-│   ├── hooks/                 # Custom React hooks
-│   │   ├── useAuth.js
-│   │   ├── useTheme.js
-│
 │   ├── utils/                 # Utility/helper functions
 │   │   ├── api.js
-│   │   ├── formatDate.js
 │
 │   ├── App.js                 # Root component
 │   ├── index.js               # Entry point
