@@ -1,6 +1,6 @@
 const express=require("express")
 
-const {createNote,updateNote, deleteNote, getNote}=require("../Controller/noteController");
+const {createNote,updateNote, deleteNote, getNote}=require("../controllers/noteController");
 const authMidddleware = require("../middleware/authMiddleware");
 
 const router=express.Router()

@@ -1,0 +1,41 @@
+.header {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Ensures it stays on top */
+    background: #fff !important;   /* or whatever color you want */
+    background-image: none !important;
+  }
+  
+  .header-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+  
+  .userName {
+    font-weight: 500;
+  }
+  .header {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Ensures it stays on top */
+  }
+  
+  .header-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+  
+  .userName {
+    font-weight: 500;
+  }
+    

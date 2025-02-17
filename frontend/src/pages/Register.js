@@ -4,7 +4,8 @@ import { useSnackbar } from "notistack";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
+import Header from "../components/Layout/Header";
+import Footer from "../components/Layout/Footer";  
 import "./Register.css"; 
 
 const Register = () => {
@@ -48,10 +49,11 @@ const Register = () => {
   };
 
   return (
-    <div className="register-page">
-      
-      <div className="register-container">
-        <div className="register-form">
+    <div className="page-container">  
+      <Header /> {/* ✅ Fixed Header at the Top */}
+
+      <div className="content">  
+        <div className="register-container">
           <h2 className="register-title">Create Your Notebook Account</h2>
           <form onSubmit={register}>
             <div className="input-group">
@@ -94,8 +96,8 @@ const Register = () => {
           </p>
         </div>
       </div>
-      
-      <Footer />
+
+      <Footer /> {/* ✅ Fixed Footer at the Bottom */}
     </div>
   );
 };
