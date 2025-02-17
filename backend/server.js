@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const helmet = require("helmet");
 
-
+const noteRoutes = require("./routes/noteRoutes");
 const authRoutes = require("./routes/authRoutes");
 
 
@@ -18,6 +18,7 @@ app.use(helmet());
 
 // Routes
 app.use("/auth", authRoutes);
+app.use("/api",noteRoutes)
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })

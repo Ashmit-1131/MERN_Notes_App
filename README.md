@@ -26,19 +26,63 @@ MERN-Notes-App/
 │   ├── server.js       # Main Express server
 │   ├── package.json    # Backend dependencies
 │
-│── frontend/      # React frontend with Tailwind CSS
-│   ├── src/
-│   │   ├── components/
-        |__
-│   │   ├── pages/
-│   │   ├── context/
-│   │   ├── utils/
-│   │   ├── App.js
-│   │   ├── index.js
-│   ├── package.json    # Frontend dependencies
+frontend/
+│── src/
+│   ├── assets/                # Static assets (images, fonts, etc.)
+│   │   ├── images/
+│   │   ├── fonts/
+│   │   ├── styles/
+│   │       ├── global.css     # Global styles
+│   │       ├── variables.css  # Theme variables
 │
-│── .gitignore
-│── README.md
+│   ├── components/            # Reusable UI components
+│   │   ├── Layout/            # Shared layout components
+│   │   │   ├── Header.js
+│   │   │   ├── Footer.js
+│   │   │   ├── Header.css
+│   │   │   ├── Footer.css
+│   │   │
+│   │   ├── Notes/             # Note-related components
+│   │   │   ├── NoteBook.js
+│   │   │   ├── NoteBook.css
+│   │   │   ├── NoteCard.js
+│   │   │   ├── NoteCard.css
+│   │   │
+│   │   ├── UI/                # Generic UI components (buttons, modals, etc.)
+│   │   │   ├── Button.js
+│   │   │   ├── Modal.js
+│   │   │   ├── CreateNoteModal.js
+│   │   │   ├── CreateNoteModal.css
+│
+│   ├── context/               # Global state management (React Context API)
+│   │   ├── AuthContext.js
+│   │   ├── ThemeContext.js
+│
+│   ├── pages/                 # Page-level components (routes)
+│   │   ├── Home.js
+│   │   ├── Login.js
+│   │   ├── Login.css
+│   │   ├── Register.js
+│   │   ├── Register.css
+│
+│   ├── routes/                # Centralized routing configuration
+│   │   ├── Routes.js
+│
+│   ├── hooks/                 # Custom React hooks
+│   │   ├── useAuth.js
+│   │   ├── useTheme.js
+│
+│   ├── utils/                 # Utility/helper functions
+│   │   ├── api.js
+│   │   ├── formatDate.js
+│
+│   ├── App.js                 # Root component
+│   ├── index.js               # Entry point
+│   ├── package.json           # Project dependencies
+│   ├── .gitignore             # Git ignore file
+│   ├── README.md              # Project documentation
+│
+
 ```
 
 ---
@@ -122,7 +166,36 @@ MERN-Notes-App/
    ```
 
 ---
+## Day 3: Frontend Notes CRUD & Profile Page (Branch: day-3)
+✅ Frontend Tasks
+Integrate Notes CRUD UI
 
+Display Notes:
+1 Implement a grid view in the NoteBook component to display all notes using fixed-height Note Cards.
+Note Modals:
+Use NoteModal for creating and editing notes.
+Use ViewNoteModal to display the full content of a note when a card is clicked.
+UI Enhancements:
+Ensure a clean and responsive layout with proper alignment of Note Cards.
+Implement Profile Page
+
+Create Profile Component:
+Develop a Profile.js page where users can update their username and email.
+Integrate with Auth Context:
+Use the authentication context (AuthContext) to fetch and update user details.
+API Integration:
+Connect the profile update functionality to the backend API.
+Update Routing
+
+Add a new route for the Profile page in your main router (e.g., in App.js).
+Ensure protected routes (like the Profile page) are only accessible to authenticated users.
+Push Changes to GitHub
+
+
+git checkout -b day-3
+git add .
+git commit -m "Day 3: Implement Notes CRUD UI & Profile page"
+git push origin day-3
  # Git Workflow
 
 1. Initialize Git and **create remote repository**

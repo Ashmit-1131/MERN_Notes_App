@@ -1,0 +1,45 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  background-size: cover; /* Ensure it covers the entire page */
+  background-attachment: fixed; /* Keeps it fixed while scrolling */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: white;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgb(190, 161, 17);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.9); /* Adds a semi-transparent white background */
+  border-radius: 10px;
+  z-index: 1001;
+}
+.footer {
+  position: relative; /* Changed from fixed */
+  margin-top: 30px; /* Adds space between the form and the footer */
+  padding: 15px 0;
+  background: rgb(181, 33, 33);
+  text-align: center;
+}
+

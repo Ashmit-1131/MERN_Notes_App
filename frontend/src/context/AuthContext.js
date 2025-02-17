@@ -9,8 +9,8 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const email = localStorage.getItem("email");
+    const token = sessionStorage.getItem("token");
+    const email = sessionStorage.getItem("email");
     if (token && email) {
       setUser({ email, token });
     }
@@ -26,13 +26,13 @@ export const AuthProvider = ({ children }) => {
         
       
         const { token, user: userData } = res.data;
-        localStorage.setItem("token", token);
-        localStorage.setItem("email", userData.email);
+        sessionStorage.setItem("token", token);
+        sessionStorage.setItem("email", userData.email);
    
-        localStorage.setItem("name", userData.name);
+        sessionStorage.setItem("name", userData.name);
         
         setUser({ email: userData.email, token });
-        navigate("/notebook");
+        navigate("/");
       } else {
         enqueueSnackbar("Invalid login response!", { variant: "error" });
       }
@@ -53,9 +53,9 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("token");
-    localStorage.removeItem("email");
-    localStorage.removeItem("name");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("name");
     navigate("/login");
   };
 
