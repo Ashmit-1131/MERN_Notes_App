@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import NoteBook from './components/Notes/NoteBook';
 import { ThemeProvider } from './context/ThemeContext';
+import Profile from './pages/Profile';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/" element={<NoteBook/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/login" element={<Login/>} />
+          <Route path="/profile" element={<Profile/>} />
 
         </Routes>
       </ThemeProvider>
