@@ -1,6 +1,5 @@
-// Header.js
-import React, { useContext } from "react";
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { Navbar, Nav, Container, Button, Dropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../context/ThemeContext";
 import lightLogo from "../../assets/light_themed_logo.png.webp";
@@ -10,10 +9,10 @@ import "./Header.css";
 const Header = () => {
   const navigate = useNavigate();
   const { theme, toggleTheme } = useContext(ThemeContext);
-
+  
   const token = sessionStorage.getItem("token");
-  const username = sessionStorage.getItem("username");
-
+  const name = sessionStorage.getItem("name");
+  
   const handleLogout = () => {
     sessionStorage.clear();
     navigate("/");
@@ -45,7 +44,6 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link onClick={() => navigate("/")}>NOTEBOOK</Nav.Link>
-
             <Button
               onClick={toggleTheme}
               variant="outline-secondary"
@@ -55,19 +53,22 @@ const Header = () => {
             </Button>
 
             {token ? (
-              <>
-                <Nav.Item className="d-flex align-items-center me-3">
+              <Dropdown align="end" className="ms-3">
+                <Dropdown.Toggle variant="outline-secondary" id="profile-dropdown">
                   <img
                     src="avatar.png"
-                    alt={username || "User"}
+                    alt={name}
                     className="avatar-img"
                   />
-                  <span className="userName ms-2">{username}</span>
-                </Nav.Item>
-                <Button variant="outline-secondary" onClick={handleLogout}>
-                  LOGOUT
-                </Button>
-              </>
+                  <span className="userName ms-2">{name}</span>
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={() => navigate("/profile")}>Profile</Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             ) : (
               <>
                 <Nav.Link onClick={() => navigate("/login")}>LOGIN</Nav.Link>
