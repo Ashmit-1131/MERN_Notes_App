@@ -1,18 +1,12 @@
-const express=require("express")
-
-const {createNote,updateNote, deleteNote, getNote}=require("../controllers/noteController");
+const express = require("express");
+const { createNote, updateNote, deleteNote, getNote } = require("../controllers/noteController");
 const authMidddleware = require("../middleware/authMiddleware");
 
-const router=express.Router()
+const router = express.Router();
 
+router.post("/post", authMidddleware, createNote);
+router.get("/", authMidddleware, getNote);
+router.put("/:id", authMidddleware, updateNote);
+router.delete("/:id", authMidddleware, deleteNote);
 
-router.post("/post",authMidddleware, createNote)
-router.get("/",authMidddleware, getNote)
-router.put("/:id",authMidddleware,updateNote)
-router.delete("/:id",authMidddleware,deleteNote)
-
-
-
-module.exports=router;
-
-
+module.exports = router;
