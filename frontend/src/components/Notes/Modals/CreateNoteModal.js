@@ -12,7 +12,6 @@ const CreateNoteModal = ({ show, handleClose, addNote, updateNote, note }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-
   useEffect(() => {
     if (note) {
       setFormData({
@@ -58,17 +57,12 @@ const CreateNoteModal = ({ show, handleClose, addNote, updateNote, note }) => {
         const response = await axios.put(
           `${config.endpoint}/api/${note._id}`,
           formData,
-          { headers: { Authorization: `${token}` } }
+          { headers: { Authorization: token } }
         );
         updateNote(response.data);
       } else {
-        // Create mode: add a new note using POST /api/post
-        const response = await axios.post(
-          `${config.endpoint}/api/post`,
-          formData,
-          { headers: { Authorization: `${token}` } }
-        );
-        addNote(response.data);
+        // Create mode: add a new note using WebSocket
+        addNote(formData);
       }
       handleClose();
       setFormData({ title: "", content: "", category: "" });
