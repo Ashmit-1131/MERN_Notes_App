@@ -17,3 +17,7 @@ body.dark {
 .header.light {
   background-color: #f8f9fa !important;
 }
+
+body {
+  padding-bottom: 56px; 
+}

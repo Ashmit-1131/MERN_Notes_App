@@ -1,21 +1,15 @@
 .note-card {
     position: relative;
-    /* Limit the maximum width so each card is narrower */
-    max-width: 260px;
-    /* Fix the height to be smaller than before */
-    height: 220px;
-    
-    background: #ffffff;
+ max-width: 260px;
+  height: 220px;
+     background: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     margin-bottom: 20px;
-    
-    /* Center the card horizontally within its column */
+    background-color: rgb(225, 213, 181);
     margin-left: auto;
     margin-right: auto;
-    
-    /* Slightly smaller shadow for a more compact look */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.326);
     
     cursor: pointer;
     display: flex;

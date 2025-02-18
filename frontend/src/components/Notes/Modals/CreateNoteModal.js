@@ -61,8 +61,13 @@ const CreateNoteModal = ({ show, handleClose, addNote, updateNote, note }) => {
         );
         updateNote(response.data);
       } else {
-        // Create mode: add a new note using WebSocket
-        addNote(formData);
+        // Create mode: add a new note using POST /api
+        const response = await axios.post(
+          `${config.endpoint}/api/post`,
+          formData,
+          { headers: { Authorization: token } }
+        );
+        addNote(response.data);
       }
       handleClose();
       setFormData({ title: "", content: "", category: "" });

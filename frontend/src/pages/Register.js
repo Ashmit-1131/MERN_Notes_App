@@ -5,8 +5,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Header from "../components/Layout/Header";
-import Footer from "../components/Layout/Footer";  
-import "./Register.css"; 
+import Footer from "../components/Layout/Footer";
+import "./Register.css";
+import { config } from "../utils/api";
 
 const Register = () => {
   const { enqueueSnackbar } = useSnackbar();
@@ -26,11 +27,13 @@ const Register = () => {
     e.preventDefault();
     if (!validateInput(formData)) return;
     try {
-      await axios.post(`http://localhost:8081/auth/register`, formData);
+      await axios.post(`${config.endpoint}/auth/register`, formData);
       enqueueSnackbar("Registered successfully", { variant: "success" });
+      setFormData({ name: "", email: "", password: "" }); // Clear form on success
       navigate("/login");
     } catch (err) {
-      enqueueSnackbar(err.response?.data?.message || "Registration failed", { variant: "error" });
+      enqueueSnackbar(err.response?.data?.msg || "Registration failed", { variant: "error" });
+      setFormData({ name: "", email: "", password: "" }); // Clear form on failure
     }
   };
 
@@ -38,10 +41,12 @@ const Register = () => {
     if (!name) {
       enqueueSnackbar("Name is required", { variant: "warning" });
       return false;
-    } else if (!email) {
+    }
+    if (!email) {
       enqueueSnackbar("Email is required", { variant: "warning" });
       return false;
-    } else if (!password || password.length < 6) {
+    }
+    if (!password || password.length < 6) {
       enqueueSnackbar("Password must be at least 6 characters", { variant: "warning" });
       return false;
     }
@@ -49,10 +54,10 @@ const Register = () => {
   };
 
   return (
-    <div className="page-container">  
-      <Header /> {/* ✅ Fixed Header at the Top */}
+    <div className="page-container">
+      <Header />
 
-      <div className="content">  
+      <div className="content">
         <div className="register-container">
           <h2 className="register-title">Create Your Notebook Account</h2>
           <form onSubmit={register}>
@@ -97,7 +102,7 @@ const Register = () => {
         </div>
       </div>
 
-      <Footer /> {/* ✅ Fixed Footer at the Bottom */}
+      <Footer />
     </div>
   );
 };

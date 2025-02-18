@@ -1,41 +1,27 @@
-.header {
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* Ensures it stays on top */
-    background: #fff !important;   /* or whatever color you want */
-    background-image: none !important;
-  }
-  
-  .header-title {
-    display: flex;
-    align-items: center;
-  }
-  
-  .avatar-img {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-  }
-  
-  .userName {
-    font-weight: 500;
-  }
-  .header {
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* Ensures it stays on top */
-  }
-  
-  .header-title {
-    display: flex;
-    align-items: center;
-  }
-  
-  .avatar-img {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-  }
-  
-  .userName {
-    font-weight: 500;
-  }
-    
+/* Header.css */
+
+/* General header dark mode styling */
+.header.dark {
+  color: #fff;
+}
+
+/* Ensure Navbar brand and nav-links appear white */
+.header.dark .navbar-brand,
+.header.dark .nav-link,
+.header.dark .userName {
+  color: #fff !important;
+}
+
+/* Override Dropdown toggle & items if needed */
+.header.dark .dropdown-toggle,
+.header.dark .dropdown-item,
+.header.dark .dropdown-menu {
+  color: #fff !important;
+  background-color: transparent; /* Adjust if you want a transparent dropdown menu */
+}
+
+/* Optional: Style buttons in dark mode (if using outline variants) */
+.header.dark .btn-outline-secondary {
+  color: #fff;
+  border-color: #fff;
+}

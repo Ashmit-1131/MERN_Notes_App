@@ -28,16 +28,16 @@ const Login = () => {
   const handleSubmit = () => {
     const formData = { email, password };
     if (validateInput(formData)) {
-      login(formData, enqueueSnackbar); // ✅ Pass Snackbar to login function
+      login(formData, enqueueSnackbar); 
     }
   };
 
   return (
     <div className="page-container">
-      {/* ✅ Fixed Header */}
+
       <Header />
 
-      {/* ✅ Centered Login Form */}
+
       <div className="content">
         <div className="container d-flex justify-content-center align-items-center vh-100">
           <div className="card p-4 shadow-lg login-card">
@@ -70,7 +70,7 @@ const Login = () => {
         </div>
       </div>
 
-      {/* ✅ Fixed Footer */}
+    
       <Footer />
     </div>
   );
