@@ -210,4 +210,102 @@ git push origin day-3
 
 
    
-   backend deployed link:-`https://mern-notes-app-6ar0.onrender.com`
+# Final Submission
+
+- **GitHub Repository:** :-https://github.com/Ashmit-1131/MERN_Notes_App.git
+- **Live App:** [Live App URL]
+
+---
+
+## Conclusion
+
+This structured approach ensures that the project is developed in an **organized and efficient manner**. By following this three-day plan, the MERN Notes App will be fully functional with:
+✅ **User Authentication** (JWT-based login/signup)
+✅ **Notes CRUD Operations** (Create, Read, Update, Delete)
+✅ **Protected Routes** (Authentication middleware)
+✅ **Responsive UI with Tailwind CSS**
+✅ **Full API Integration**
+
+
+
+Steps to Run the Application in your local machine (Frontend + Backend):-
+1. Clone the project using the following command:
+
+git clone_- https://github.com/Ashmit-1131/MERN_Notes_App.git
+cd Mern_notes_App
+
+ project contains two folders:
+
+frontend/ (React application)
+backend/ (Node.js/Express API)
+
+2. Running the Backend (Node.js & Express)
+cd backend
+npm install
+
+
+3. Set up environment variables:
+
+Create a .env file in the backend/ folder.
+Ensure necessary configurations like MONGO_URI,PORT and JWT_SECRET secret keys are added.
+
+npm start
+
+3. Running the Frontend (React)
+cd frontend
+npm install
+
+4. Update the API URL in utils/api.js:
+Since the backend is currently set to a deployed link, update the API base URL in utils/api.js to use localhost:8081 instead
+export const config = {
+    endpoint:`http://localhost:8081`
+  };
+  
+
+5. npm start
+
+
+
+
+
+
+Steps to Check Application Functionality:-
+
+Landing page:-
+![alt text](image.png)
+
+firstly you have to register yourself so click on button register it will open 
+register page where you can register yourself using name,email and password:-
+![alt text](image-1.png)
+
+and once the register is successfully it will redirect you to the login page where you can login using email and password 
+![alt text](image-2.png)
+once the login successful it will redirect you to the Landing page again and you will be authenticated to write note,update,delete,search and filter it on the basis of category
+![alt text](image-3.png)
+
+to write a new note you can click on write your note now button it will open a modal where  you write the note and select the category and then save it
+![alt text](image-4.png)
+
+once the note will be created you will see it like a cards
+![alt text](image-5.png) 
+here you can edit the note or delete it .
+
+and you can filter your note on the basis of category and also search it but both these function will only visible when you have multiple notes card so, create many note to check this functionality
+
+and once you will login you will see your name and dropdown of logout and profile page 
+![alt text](image-6.png)
+
+on clicking logout you will be logout and can't create,see,update and delete your notes and on clicking profile page you'll be redirected to profile page 
+![alt text](image-7.png)
+where you can edit your profile and update it.
+
+toggle theme function also implemented
+![alt text](image-8.png)
+where you can change the theme of the application
+light theme
+![alt text](image-9.png)
+and the dark theme
+![alt text](image-10.png)
+
+
+

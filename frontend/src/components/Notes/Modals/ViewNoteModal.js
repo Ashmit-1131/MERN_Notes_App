@@ -1,15 +1,15 @@
-// src/components/ViewNoteModal.js
+
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./ViewNoteModal.css";
 
 const ViewNoteModal = ({ show, handleClose, note }) => {
-  if (!note) return null; // If no note is provided, don't render anything
+  if (!note) return null; 
 
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
-        <Modal.Title>{note.title}</Modal.Title>
+        <Modal.Title >{note.title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <h6 className="text-muted mb-3">

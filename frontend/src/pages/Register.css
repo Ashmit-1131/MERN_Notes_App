@@ -13,22 +13,8 @@
     background-attachment: fixed;
   }
   
-  .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: white;
-  }
-  
-  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgb(185, 153, 26);
-  }
-  
+
+
   .register-container {
     background: rgba(255, 248, 240, 0.95);
     padding: 30px;
@@ -63,22 +49,16 @@
     font-weight: bold;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+    background: linear-gradient(90deg, #0fd960 0%, #ff7eb3 100%);
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
   }
   
   .register-button:hover {
-    background: linear-gradient(90deg, #ff7eb3 0%, #ff758c 100%);
+    background: linear-gradient(90deg, #7eff87 0%, #75ff98 100%);
   }
 
-  .footer {
-    position: relative; /* Changed from fixed */
-    margin-top: 30px; /* Adds space between the form and the footer */
-    padding: 15px 0;
 
-    text-align: center;
-  }
   
   

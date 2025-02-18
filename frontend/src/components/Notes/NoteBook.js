@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Button, Container, Row, Col, Spinner,Form } from 'react-bootstrap';
 import axios from 'axios';
 import CreateNoteModal from './Modals/CreateNoteModal';
@@ -10,8 +10,10 @@ import './NoteBook.css';
 import { config } from '../../utils/api';
 import CategoryFilter from './CategoryFilter';
 
+
 // Implemented filter and category
 const NoteBook = () => {
+
     const [notes, setNotes] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [editingNote, setEditingNote] = useState(null);
@@ -26,7 +28,7 @@ const NoteBook = () => {
       const fetchNotes = async () => {
         const token = sessionStorage.getItem('token');
         if (!token) {
-          setFetchError('User not authenticated. Please log in.');
+          setFetchError('You are not authenticated. Please log in.');
           return;
         }
         setIsLoading(true);
@@ -160,7 +162,10 @@ const NoteBook = () => {
             </Row>
           ) : fetchError ? (
             <Row className="mt-4 justify-content-center">
-              <p>{fetchError}</p>
+            <p style={{ color: "white", fontSize: "18px", fontWeight: "bold" }}>
+  {fetchError}
+</p>
+
             </Row>
           ) : filteredNotes.length > 0 ? (
             <Row className="mt-4">

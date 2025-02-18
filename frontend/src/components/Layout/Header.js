@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Navbar, Nav, Container, Button, Dropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../context/ThemeContext";
@@ -9,10 +9,10 @@ import "./Header.css";
 const Header = () => {
   const navigate = useNavigate();
   const { theme, toggleTheme } = useContext(ThemeContext);
-  
+
   const token = sessionStorage.getItem("token");
   const name = sessionStorage.getItem("name");
-  
+
   const handleLogout = () => {
     sessionStorage.clear();
     navigate("/");
@@ -22,13 +22,14 @@ const Header = () => {
   return (
     <Navbar
       bg={theme === "light" ? "light" : "dark"}
+      variant={theme === "light" ? "light" : "dark"}
       expand="lg"
+      fixed="top"               // <-- This fixes the Navbar to the top
       className={`header ${theme}`}
     >
-      <Container>
+      <Container fluid>         {/* Makes the header take full width */}
         <Navbar.Brand
           onClick={() => navigate("/")}
-          className="header-title"
           style={{ cursor: "pointer" }}
         >
           <img
@@ -40,7 +41,6 @@ const Header = () => {
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link onClick={() => navigate("/")}>NOTEBOOK</Nav.Link>
@@ -55,11 +55,6 @@ const Header = () => {
             {token ? (
               <Dropdown align="end" className="ms-3">
                 <Dropdown.Toggle variant="outline-secondary" id="profile-dropdown">
-                  <img
-                    src="avatar.png"
-                    alt={name}
-                    className="avatar-img"
-                  />
                   <span className="userName ms-2">{name}</span>
                 </Dropdown.Toggle>
 
