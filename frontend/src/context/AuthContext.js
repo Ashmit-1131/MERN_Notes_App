@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { config } from "../utils/api";
 
 const AuthContext = createContext();
 
@@ -18,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (formData, enqueueSnackbar) => {
     try {
-      const res = await axios.post(`http://localhost:8081/auth/login`, formData);
+      const res = await axios.post(`${config.endpoint}/auth/login`, formData);
       
     
       if (res.data.token && res.data.user) {
